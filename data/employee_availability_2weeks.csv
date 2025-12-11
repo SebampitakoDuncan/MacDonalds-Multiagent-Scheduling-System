@@ -1,0 +1,74 @@
+﻿Service Team - 2 Week Availability Schedule,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Period:,Week 1: Dec 9-15 | Week 2: Dec 16-22,,,,,Total Staff:,40,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+ID,Employee Name,Type,Station,"Mon
+Dec 9","Tue
+Dec 10","Wed
+Dec 11","Thu
+Dec 12","Fri
+Dec 13","Sat
+Dec 14","Sun
+Dec 15","Mon
+Dec 16","Tue
+Dec 17","Wed
+Dec 18","Thu
+Dec 19","Fri
+Dec 20","Sat
+Dec 21","Sun
+Dec 22"
+1001,James Smith,Full-Time,Kitchen,1F,2F,3F,1F,2F,/,3F,1F,2F,3F,1F,/,1F,/
+1002,Emma Johnson,Full-Time,Kitchen,1F,/,3F,1F,2F,1F,3F,1F,2F,/,1F,2F,1F,3F
+1003,Oliver Williams,Full-Time,Kitchen,1F,2F,3F,1F,2F,1F,/,/,/,3F,1F,2F,1F,3F
+1004,Sophia Brown,Full-Time,Kitchen,1F,2F,3F,/,2F,1F,/,1F,2F,3F,1F,2F,1F,/
+1005,William Jones,Full-Time,Kitchen,1F,2F,3F,1F,/,1F,3F,1F,2F,/,1F,2F,/,/
+1006,Ava Garcia,Full-Time,Counter,1F,2F,3F,1F,2F,1F,/,1F,2F,3F,1F,2F,1F,3F
+1007,Jack Miller,Full-Time,Counter,1F,/,3F,/,2F,1F,/,1F,/,3F,/,2F,1F,3F
+1008,Mia Davis,Full-Time,Counter,1F,2F,3F,1F,2F,1F,/,1F,2F,3F,1F,2F,/,3F
+1009,Lucas Wilson,Full-Time,Counter,1F,2F,3F,1F,2F,1F,/,1F,2F,3F,1F,2F,/,3F
+1010,Isabella Anderson,Full-Time,Multi-Station McCafe,1F,2F,3F,/,/,1F,3F,1F,2F,/,1F,2F,1F,3F
+1011,Henry Thomas,Full-Time,Multi-Station McCafe,1F,2F,3F,1F,2F,1F,3F,1F,2F,3F,1F,2F,1F,/
+1012,Charlotte Taylor,Full-Time,Dessert Station,1F,2F,/,1F,/,1F,3F,1F,2F,3F,/,2F,1F,/
+1013,Ethan Moore,Part-Time,Kitchen,2F,/,1F,/,1F,1F,2F,2F,2F,2F,/,/,/,/
+1014,Amelia Jackson,Part-Time,Kitchen,1F,/,2F,/,1F,1F,2F,/,1F,1F,1F,/,1F,2F
+1015,Mason Martin,Part-Time,Kitchen,/,2F,1F,1F,/,1F,/,1F,/,2F,1F,2F,1F,/
+1016,Harper Lee,Part-Time,Counter,2F,/,2F,2F,/,1F,2F,1F,/,1F,/,1F,/,/
+1017,Logan Thompson,Part-Time,Counter,2F,1F,2F,/,2F,1F,2F,2F,1F,2F,2F,1F,/,2F
+1018,Evelyn White,Part-Time,Counter,/,/,1F,2F,1F,1F,/,2F,/,2F,2F,1F,1F,/
+1019,Alex Harris,Part-Time,Counter,2F,1F,1F,2F,/,1F,/,1F,/,1F,1F,1F,1F,/
+1020,Abigail Clark,Part-Time,Multi-Station McCafe,1F,1F,/,/,2F,1F,2F,2F,2F,2F,1F,2F,1F,/
+1021,Michael Lewis,Part-Time,Multi-Station McCafe,1F,1F,1F,1F,1F,/,/,/,1F,2F,2F,/,1F,2F
+1022,Emily Walker,Part-Time,Dessert Station,1F,1F,1F,2F,2F,1F,2F,2F,/,2F,1F,/,1F,2F
+1023,Daniel Hall,Casual,Kitchen,/,1F,/,/,/,/,3F,1F,2F,/,/,1F,2F,2F
+1024,Elizabeth Allen,Casual,Kitchen,2F,/,/,/,/,2F,3F,/,/,/,2F,/,2F,2F
+1025,Matthew Young,Casual,Kitchen,/,/,/,/,2F,3F,2F,/,/,/,/,1F,3F,3F
+1026,Sofia King,Casual,Kitchen,2F,/,/,/,/,/,2F,/,/,/,/,1F,2F,3F
+1027,Samuel Wright,Casual,Kitchen,/,/,/,/,2F,3F,/,/,/,2F,2F,/,/,3F
+1028,Avery Scott,Casual,Kitchen,/,/,/,/,2F,2F,2F,/,/,/,/,/,/,2F
+1029,David Green,Casual,Counter,/,2F,2F,2F,/,3F,3F,2F,/,2F,/,2F,/,/
+1030,Ella Baker,Casual,Counter,/,/,1F,/,/,2F,2F,1F,/,2F,/,/,3F,2F
+1031,Joseph Adams,Casual,Counter,/,/,/,/,/,2F,2F,/,/,1F,2F,2F,3F,/
+1032,Scarlett Nelson,Casual,Counter,1F,/,/,/,/,2F,2F,/,/,1F,/,1F,2F,/
+1033,Ben Hill,Casual,Counter,1F,/,/,/,/,/,2F,1F,/,/,/,/,/,2F
+1034,Grace Campbell,Casual,Counter,/,/,2F,2F,/,/,3F,/,/,2F,/,/,/,2F
+1035,Ryan Mitchell,Casual,Counter,/,2F,2F,2F,2F,/,3F,/,/,/,/,1F,/,3F
+1036,Chloe Roberts,Casual,Counter,/,/,/,2F,2F,2F,2F,/,/,1F,2F,2F,/,3F
+1037,Andrew Carter,Casual,Multi-Station McCafe,1F,2F,1F,/,1F,3F,/,2F,/,2F,/,2F,/,/
+1038,Victoria Phillips,Casual,Multi-Station McCafe,/,2F,/,2F,2F,/,2F,/,/,2F,/,/,/,2F
+1039,Nathan Evans,Casual,Dessert Station,/,1F,2F,1F,/,2F,/,/,/,2F,/,2F,3F,2F
+1040,Madison Turner,Casual,Dessert Station,/,/,/,/,2F,3F,/,2F,/,/,/,/,2F,2F
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Legend,,,,,,,,,,,,,,,,,
+Shift Codes:,,,,Employee Types:,,,,Shift Colors:,,,,,,,,,
+1F = First Half (06:30-15:30),,,,Green = Full-Time,,,,Light Green = 1F,,,,,,,,,
+2F = Second Half (14:00-23:00),,,,Yellow = Part-Time,,,,Yellow = 2F,,,,,,,,,
+3F = Full Day (08:00-20:00),,,,Orange = Casual,,,,Light Orange = 3F,,,,,,,,,
+/ = Not Available,,,,,,,,Gray = Day Off,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Weekly Coverage Summary,,,,,,,,,,,,,,,,,
+Employment Type,Average Days/Week,Typical Shifts,,,,,,,,,,,,,,,
+Full-Time,5-6 days,"1F, 2F, 3F (flexible)",,,,,,,,,,,,,,,
+Part-Time,4-5 days,"Mainly 1F, 2F",,,,,,,,,,,,,,,
+Casual,2-4 days,Mainly 2F (weekends),,,,,,,,,,,,,,,

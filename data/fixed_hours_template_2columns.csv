@@ -1,0 +1,32 @@
+Fixed Working Hours Template Configuration,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Template Information,,,,,,,,,,,,,,,,,
+Update By:,Update Date:,2019/7/4 20:12:27,Status:,Confirmed,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Weekly Schedule,,,,,,,,,,,,,,,,,
+Fixed Hours Type,Flexible,Monday,,Tuesday,,Wednesday,,Thursday,,Friday,,Saturday,,Sunday,,Weekly Total,
+,,Std,Rest,Std,Rest,Std,Rest,Std,Rest,Std,Rest,Std,Rest,Std,Rest,Std,Rest
+Opening,☑,2,,2,,2,,2,,2,,2,,2,,14,0
+Shift Handover,☑,0.5,0.6,0.5,0.6,0.5,0.6,0.5,0.6,0.5,0.6,0.5,0.6,0.5,0.6,3.5,3.5
+Closing,☑,4,4,4,4,4,4,4,4,4,4,4,4,4,4,28,28
+Daily Cleaning,,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,10.5,10.5
+Weekly Cleaning,,1,1,0,0,0,0,0,0,1,0,1,1,1,1,7,2
+Monthly Cleaning,,,,,,,,,,,,,,,,7,0
+Inventory/Supply,,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10.5,14
+Product Preprocess,,2,2,2,2,2,2,2,2,2,2,2,2,2,2,7,14
+,,,,,,,,,,,,,,,,,
+Template Benefits:,,,,,,,,,,,,,,,,,
+• Provides a standard guideline that can be adjusted by store managers to systematize their experience,,,,,,,,,,,,,,,,,
+• Each store can configure its own weekly fixed hours template independently,,,,,,,,,,,,,,,,,
+• Pre-configure fixed hours templates to improve scheduling efficiency,,,,,,,,,,,,,,,,,
+• 1 represents one hour,,,,,,,,,,,,,,,,,
+"• Std => Standard, Rest => Based on Restaurants config number ",,,,,,,,,,,,,,,,,
+
+Time Schedule Details:,
+Task,Time Period
+Cash Management,6:00-6:30
+Closing ,21:00 - 23:30
+Lobby ,07:00 - 22:00
+Daily Cleaning,21:00 - 23:30
+Inventory/Supply ,09:00 - 11:00
+Product Preprocessing,14:00 - 15:00

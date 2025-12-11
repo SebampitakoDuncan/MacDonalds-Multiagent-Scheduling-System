@@ -1,0 +1,19 @@
+﻿Management Shift Codes Guide,,,,
+,,,,
+Code,Shift Name,Time,Hours,Description
+S,Day Shift,06:30 - 15:00,8.5,Opening and morning supervision
+1F,First Half,06:30 - 15:30,9,Morning opening through lunch
+2F,Second Half,14:00 - 23:00,9,Afternoon through closing
+3F,Full Day,08:00 - 20:00,12,Extended all-day coverage
+SC,Shift Change,11:00 - 20:00,9,Peak overlap period
+M,Meeting,Varies,8,Management meetings/training
+/,Day Off,-,0,Rest day
+NA,Not Available,-,0,Leave or vacation
+,,,,
+,,,,
+Key Points:,,,,
+• At least 1 manager must be on duty at all times,,,,
+• Opening and closing require manager presence,,,,
+• Peak hours should have 2 managers when possible,,,,
+• Minimum 10 hours rest between shifts,,,,
+• Full-time managers: 38-45 hours per week,,,,
