@@ -1,0 +1,67 @@
+Methodology and Rationale
+-------------------------
+
+Overview
+I engineered a multi-agent workforce scheduling system for McDonald’s Australia that delivers a 2-week roster in ~10 seconds with zero hard violations and manager-ready escalations.
+
+Data Standardization (CSV everywhere)
+- Reality: Inputs were a mix of Excel workbooks and CSVs. I flattened everything to CSV to keep parsing predictable and lightweight for Streamlit/cloud runs.
+- Why CSV: Fast with pandas, easy to validate, zero proprietary deps and consistent for all agents passing data in memory.
+- Inputs: employees/availability, store configs, shift codes, management roster, rostering parameters, store structure/staff estimates—one format, fewer surprises.
+
+Why Multi-Agent (not single-agent)
+- The problem decomposes naturally: load data, forecast demand, match staff, validate, resolve, explain, export. Small, focused agents are easier to test, observe and swap.
+- Fail fast and localize issues: each agent has its own health/state; recovery is simpler than a monolith.
+- Negotiation/iteration: ConflictResolver and ComplianceValidator can loop with feedback rather than a one-shot “hope-it-works” solver.
+- Human-in-the-loop: Manager escalation is a first-class outcome not an afterthought buried inside one big function.
+
+Architecture at a Glance
+- Coordinator: Orchestrates 7 phases, tracks progress, aggregates outcomes.
+- DataLoader: Normalizes CSV inputs, validates counts (employees, stores, managers).
+- DemandForecaster: Rule-based 14-day forecast with weekend uplift and peaks.
+- StaffMatcher: Auction-style bidding for shift assignments to balance skills and desirability.
+- ComplianceValidator: Enforces Fair Work rules (hours caps, rest periods), skills/station matches, coverage minima.
+- ConflictResolver: Generates and ranks resolutions; iterates until violations are cleared or escalated.
+- Explainer: LLM-powered summaries only; never regenerates schedules.
+- RosterGenerator: Multi-sheet Excel export (roster, employee summary, coverage, compliance).
+- Message Bus: Typed messages with correlation IDs; logs every hop; supports directed and broadcast messages so collaboration is visible, not hidden.
+
+Creativity and Human Factors (Fairness via Gini)
+- Why it matters: Teams notice when the same people get the best (or most) shifts; it drives conflict and churn. Gini on hours gives us a simple fairness lens. Lower Gini → more even spread.
+- How I use it: Shown in UI and considered during validation; nudges toward fair allocations while respecting hard rules.
+- Auction matching: Transparent, explainable and friendly to cross-training; avoids opaque “secret sauce” scoring.
+
+LLM Usage: Explain, Don’t Decide alongwith why OpenRouter
+- Rationale: Scheduling is high-stakes; hallucinated changes can violate law or cost money. The core is deterministic and rule-based.
+- Role: Explainer turns final schedules into human-readable summaries. If the LLM fails, the schedule is unchanged.
+- Why OpenRouter: One key, vendor-agnostic access to multiple free/reliable models, plus fallbacks and sane rate limits—no infra to run and no lock-in.
+- Models: Primary `mistralai/mistral-7b-instruct:free`, fallback `google/gemma-2-9b-it:free`. Chosen for free-tier availability, stability and responsiveness. No schedule generation—only narrative.
+
+UI/UX Choice: Streamlit
+- Quick to build and deploy; great for live status/logs and downloads.
+- Sidebar: Health (API key present, data dir OK, output writable, rate limit OK) and session info (cached results for both stores—switching stores brings visuals up instantly without reruns).
+- Main: Agent status/logs (with Message Bus hops), coverage/compliance/fairness visuals, schedule preview, Excel export.
+
+Safety, Compliance and Guardrails
+- Hard vs. soft: Fair Work limits (hours caps by employment type, rest periods, skills/station requirements, minimum staffing) are hard; preferences and fairness are soft.
+- Iterative loop: Up to 5 passes; validate → resolve → re-validate. Stop early when clean.
+- Escalation: Unresolved items go to manager with clear options, not silent failures.
+- Deterministic core: No stochastic LLM in decisions; auditable logs; bus hop history for traceability.
+
+Known Limitation (Forecasting)
+- I stayed rule-based (peaks, weekend uplift) to keep runs fast/deterministic and because I lacked external signals. An ML forecaster with weather, local events, holidays, historical sales would likely improve accuracy—that’s the natural next step when richer data is available.
+
+Emergent Behavior and Collaboration
+- Not one-way: Agents broadcast and respond (requests, data, violations, resolutions, approvals, completes). ConflictResolver and ComplianceValidator iterate under Coordinator oversight.
+- Learning hooks: Auction signals and resolution patterns can guide future prioritization; fairness signals can inform tweaks.
+- Observability: Bus logs, health checks and per-agent state transitions make collaboration inspectable instead of implicit.
+
+Fit to the Challenge Brief
+- Clear multi-agent roles with typed comms; end-to-end flow under 180s (achieved ~10s).
+- Hard compliance + fairness (Gini) + human-in-loop escalation.
+- Explainability without risking hallucinated decisions.
+- Production-friendly UX with health checks, caching and exports.
+
+
+All in all, I chose a modular multi-agent design to stay deterministic, auditable and human-centered. CSV everywhere reduced ingestion risk; splitting agents improved clarity and recoverability; fairness via Gini addressed team dynamics; LLMs were confined to explanations to avoid operational risk; Streamlit resulted in fast, transparent UI with health and caching. The main trade-off however was rule-based forecasting (fast, deterministic) vs. richer ML (future work).
+This balance meets the goals: fast generation, zero hard violations, transparent collaboration and manager-ready outputs.
