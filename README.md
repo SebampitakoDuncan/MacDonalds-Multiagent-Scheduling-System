@@ -103,6 +103,7 @@ python -m streamlit run streamlit_app.py
 
 # Opens at http://localhost:8501
 ```
+If you prefer to test it directly in the cloud (no local setup), use: https://yepaimultiagentworkforceschedulingsystem.streamlit.app/
 
 The web interface provides:
 - Interactive store selection (CBD Core or Suburban Residential)
