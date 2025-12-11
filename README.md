@@ -54,7 +54,7 @@ To replace manual 4-8 hours weekly scheduling with an AI-powered system that gen
 │ • Generate summary│                              │ • Export Excel   │
 │ • Explain decisions│                             │ • Color coding   │
 │ • Manager approvals│                             │ • Multi-sheets   │
-└──────────────────┘                              └──────────────────┘                          └──────────────────┘
+└──────────────────┘                              └──────────────────┘ 
 ```
 
 ### Message Bus Communication
