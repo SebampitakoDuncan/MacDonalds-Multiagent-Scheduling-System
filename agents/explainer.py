@@ -40,7 +40,7 @@ class OpenRouterClient:
         self.headers = {
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/yep-ai-challenge",
+            "HTTP-Referer": "",
             "X-Title": "McDonald's Scheduling System"
         }
         self._call_count = 0
