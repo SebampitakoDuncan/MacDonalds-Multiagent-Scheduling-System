@@ -75,6 +75,12 @@ To replace manual 4-8 hours weekly scheduling with an AI-powered system that gen
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+**What you'll see in logs (bus examples)**
+- `[MessageBus] DataLoader → Coordinator (data) correlation=2d313a2c | {'status': 'loaded', 'employee_count': 40, 'store_count': 2}`
+- `[MessageBus] ComplianceValidator → ConflictResolver (violation) correlation=e4b06660 | {'violations': [...]}`
+- `[MessageBus] ConflictResolver → Coordinator (resolution_selected) correlation=0bf632b8 | {'violation': '...', 'resolution': '...'}`
+- `[MessageBus] RosterGenerator → Coordinator (complete) correlation=cae6315d | {'type': 'roster_generated', 'filepath': 'output/roster_Store_1_2024-12-09_20251211.xlsx', ...}`
+
 ### Workflow Phases
 
 ```
