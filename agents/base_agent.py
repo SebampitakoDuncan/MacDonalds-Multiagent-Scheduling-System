@@ -423,6 +423,20 @@ class BaseAgent(ABC):
         if correlation_id:
             message.correlation_id = correlation_id
         
+        # Log explicit bus activity to the main file logger for auditing/demo
+        if BaseAgent._file_logger:
+            preview = str(content)
+            if len(preview) > 120:
+                preview = preview[:120] + "..."
+            BaseAgent._file_logger.info(
+                "[MessageBus] %s → %s (%s) correlation=%s | %s",
+                self.name,
+                receiver or "ALL",
+                msg_type.value,
+                message.correlation_id or "-",
+                preview,
+            )
+        
         self.message_bus.send(message)
         return message
     
@@ -441,6 +455,21 @@ class BaseAgent(ABC):
         """
         response = Message.create_response(original, content, msg_type)
         response.sender = self.name
+        
+        # Log explicit bus activity for responses as well
+        if BaseAgent._file_logger:
+            preview = str(content)
+            if len(preview) > 120:
+                preview = preview[:120] + "..."
+            BaseAgent._file_logger.info(
+                "[MessageBus] %s → %s (%s) correlation=%s | %s",
+                self.name,
+                response.receiver or "ALL",
+                msg_type.value,
+                response.correlation_id or "-",
+                preview,
+            )
+        
         self.message_bus.send(response)
         return response
     
