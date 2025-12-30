@@ -109,7 +109,9 @@ python -m streamlit run streamlit_app.py
 
 # Opens at http://localhost:8501
 ```
-If you prefer to test it directly in the cloud (no local setup), use: https://yepaimultiagentworkforceschedulingsystem.streamlit.app/
+If you prefer to test it directly in the cloud (no local setup), use: https://sebampitakoduncan-macdonalds-multiagent-sc-streamlit-app-utjqsq.streamlit.app/
+<img width="2940" height="1608" alt="CleanShot 2025-12-30 at 15 02 42@2x" src="https://github.com/user-attachments/assets/ec7c8cf0-8def-47b9-b9b9-3f0b72631321" />
+
 
 The web interface provides:
 - Interactive store selection (CBD Core or Suburban Residential)
