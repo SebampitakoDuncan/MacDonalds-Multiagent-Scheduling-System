@@ -6,9 +6,7 @@ Professional web interface for the intelligent workforce scheduling system.
 Features real-time agent status updates, interactive schedule viewing,
 and comprehensive compliance reporting.
 
-Author: Mayuresh Kadam
-Date: 6th December 2025
-YEP AI Challenge
+
 """
 
 import streamlit as st
@@ -49,6 +47,14 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+    /* Import DM Sans font */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    /* Apply DM Sans font globally */
+    * {
+        font-family: 'DM Sans', sans-serif !important;
+    }
+
     /* Main container */
     .main .block-container {
         padding-top: 2rem;
@@ -186,11 +192,55 @@ st.markdown("""
     /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    
+
     /* Expander styling */
     .streamlit-expanderHeader {
         font-weight: 600;
         color: #27251F;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    /* Hide overlapping "oa" text in expander - make it transparent */
+    .stExpander summary,
+    .stExpander summary *,
+    .streamlit-expanderHeader * {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* Make any overlapping text transparent */
+    .stExpander summary span:not(:first-child),
+    .streamlit-expanderHeader span:not(:first-child) {
+        opacity: 0 !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        display: none !important;
+    }
+    
+    /* Specifically target any "oa" or overlapping text */
+    .stExpander summary::after,
+    .streamlit-expanderHeader::after {
+        content: "" !important;
+        display: none !important;
+    }
+    
+    /* Hide any duplicate or overlapping text in expanders */
+    .stExpander summary span.st-emotion-cache-1tz5wcb,
+    .stExpander summary span[class*="e1t4gh342"] {
+        opacity: 0 !important;
+        color: transparent !important;
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    /* Reposition markdown container for better layout */
+    .st-emotion-cache-cpqr4g.et2rgd20 {
+        position: relative !important;
+        order: -1 !important;
+        z-index: 1 !important;
     }
     
     /* Loading Skeleton Animation */
@@ -251,6 +301,158 @@ st.markdown("""
         border-radius: 8px;
         padding: 1rem;
         margin: 1rem 0;
+    }
+    
+    /* Fix text overflow and prevent text squishing */
+    * {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Fix font rendering to prevent character overlap */
+    body, html {
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+    
+    /* Fix Streamlit widget labels and text - prevent squishing */
+    .stSelectbox label,
+    .stTextInput label,
+    .stSlider label,
+    .stCheckbox label,
+    .stDateInput label,
+    .stButton label,
+    .stMarkdown label {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    /* Prevent text squishing in all text elements */
+    label,
+    p,
+    span:not([class*="icon"]):not([class*="emoji"]),
+    div:not([class*="skeleton"]) {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Ensure proper spacing and prevent overlap in Streamlit widgets */
+    .stSelectbox > div,
+    .stTextInput > div,
+    .stSlider > div,
+    .stCheckbox > div,
+    .stDateInput > div {
+        overflow: visible !important;
+        position: relative !important;
+    }
+    
+    /* Hide any debug or internal "key" attributes that might be visible */
+    [data-testid*="key"]:empty,
+    [aria-label*="key"]:empty {
+        display: none !important;
+    }
+    
+    /* Fix any text that might be overlapping */
+    .stMarkdown,
+    .stText {
+        line-height: 1.5 !important;
+        letter-spacing: normal !important;
+    }
+    
+    /* Ensure Streamlit widgets don't show internal keys or empty elements */
+    [class*="st"] label:empty,
+    [class*="st"] span:empty {
+        display: none !important;
+    }
+    
+    /* Prevent text from being cut off or overlapping */
+    .stSelectbox,
+    .stTextInput,
+    .stSlider,
+    .stCheckbox,
+    .stDateInput,
+    .stButton {
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+    
+    /* Fix for widget labels to prevent overlap */
+    .stSelectbox > label,
+    .stTextInput > label,
+    .stSlider > label,
+    .stCheckbox > label,
+    .stDateInput > label {
+        position: relative !important;
+        z-index: 1 !important;
+        background: transparent !important;
+        display: block !important;
+        margin-bottom: 0.5rem !important;
+        width: 100% !important;
+    }
+    
+    /* Ensure proper spacing between elements to prevent text overlap */
+    .stSelectbox,
+    .stTextInput,
+    .stSlider,
+    .stCheckbox,
+    .stDateInput {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Fix for any hidden text that might be causing issues */
+    [style*="display: none"],
+    [hidden],
+    .hidden {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    /* Make any overlapping "oa" or duplicate text transparent/colorless */
+    span.st-emotion-cache-1tz5wcb.e1t4gh342,
+    span[class*="e1t4gh342"],
+    .stExpander summary span:last-child:not(:only-child),
+    .streamlit-expanderHeader span:last-child:not(:only-child) {
+        opacity: 0 !important;
+        color: transparent !important;
+        background: transparent !important;
+        visibility: hidden !important;
+        display: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
+    
+    /* Target any text that appears to be overlapping in expander headers */
+    .stExpander summary > span:not(:first-of-type),
+    .streamlit-expanderHeader > span:not(:first-of-type) {
+        opacity: 0 !important;
+        color: transparent !important;
+        display: none !important;
+    }
+    
+    /* Ensure expander header only shows the main text */
+    .stExpander summary {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+    
+    .stExpander summary > *:first-child {
+        display: inline-block !important;
+    }
+    
+    .stExpander summary > *:not(:first-child) {
+        display: none !important;
+        opacity: 0 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -371,8 +573,8 @@ with st.sidebar:
 
 st.markdown("""
 <div class="main-header">
-    <h1>🍔 A Multi-Agent Workforce Scheduling System for McDonald’s Operations</h1>
-    <p>Designed using Multi-Agent Systems | YEP AI Challenge</p>
+    <h1> Workforce Scheduling System for McDonald’s Australia Operations</h1>
+    <p></p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -384,7 +586,7 @@ st.markdown("""
 col_controls, col_agents = st.columns([1, 2])
 
 with col_controls:
-    st.markdown('<div class="section-header">⚙️ Control Panel</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-header"> Control Panel</div>', unsafe_allow_html=True)
     
     # Store selector
     store_options = {"Store_1": "Melbourne CBD (High Traffic)", "Store_2": "Suburban Residential"}
@@ -419,10 +621,10 @@ with col_controls:
     st.markdown("<br>", unsafe_allow_html=True)
     
     # Generate button
-    generate_button = st.button("🚀 Generate Schedule", type="primary", width="stretch")
+    generate_button = st.button(" Generate Schedule", type="primary", width="stretch")
 
 with col_agents:
-    st.markdown('<div class="section-header">🤖 Multi-Agent System Status</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-header"> Multi-Agent System Status</div>', unsafe_allow_html=True)
     
     # Agent status display
     agents_info = [
@@ -1079,8 +1281,8 @@ if len(st.session_state.store_results) >= 2:
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #6B7280; padding: 1rem;">
-    <p>🍔 A Multi-Agent Workforce Scheduling System for McDonald’s Operations | Yep AI Challenge</p>
-    <p style="font-size: 0.8rem;">Built with Python, Streamlit and Multi-Agent AI Architecture by Mayuresh</p>
+    <p></p>
+    <p style="font-size: 0.8rem;"></p>
 </div>
 """, unsafe_allow_html=True)
 
