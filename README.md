@@ -1,14 +1,14 @@
-# 🍔  A Multi-Agent Workforce Scheduling System for McDonald’s Operations
+#  Workforce Scheduling System for McDonald’s Operations
 
 An intelligent multi-agent system for automated workforce scheduling designed for McDonald’s Australia operations.
 
-## 🎯 Challenge
+## Challenge
 
 To replace manual 4-8 hours weekly scheduling with an AI-powered system that generates optimal 2-week rosters in under 180 seconds.
 
 ---
 
-## 🏗️ Multi-Agent Architecture
+## Multi-Agent Architecture
 
 ### Agent Overview
 
@@ -96,7 +96,7 @@ Phase 7: EXPORT ──────────────▶ Multi-sheet Excel 
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Web Interface (Streamlit)
 
@@ -123,7 +123,7 @@ The web interface provides:
 
 ---
 
-## 📊 Features - start from here today!
+##  Features - start from here today!
 
 ### Core Capabilities
 - ✅ **Intelligent Roster Generation**: 40 employees, 2-week schedule, <180 seconds
@@ -176,22 +176,6 @@ mcdonald_scheduling_system/
 
 ---
 
-## 🔧 Configuration
-
-### OpenRouter API (Free LLM Models)
-
-The Explainer agent uses OpenRouter with free models. Get your API key at [openrouter.ai/keys](https://openrouter.ai/keys)
-
-```bash
-# Set your OpenRouter API key
-export OPENROUTER_API_KEY="your-key-here"
-```
-
-**Free Models Used:**
-- Primary: `mistralai/mistral-7b-instruct:free` (Mistral - backup)
-- Fallback: `google/gemma-2-9b-it:free` (Google Gemma 2 - reliable)
-
-Note: The system works without an API key (uses template-based explanations).
 
 ### Performance Benchmarking (Optional)
 
@@ -212,7 +196,7 @@ python benchmark.py
 
 ---
 
-## 📈 Success Metrics
+##  Success Metrics
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
@@ -224,7 +208,7 @@ python benchmark.py
 
 ---
 
-## 🎯 Constraint Handling
+##  Constraint Handling
 
 ### Hard Constraints (Must Satisfy)
 | Constraint | Description | Source |
@@ -246,7 +230,7 @@ python benchmark.py
 
 ---
 
-## 🏆 Yep AI x McDonald's Challenge
+##  Yep AI x McDonald's Challenge
 
 Built for the Yep AI Multi-Agent Challenge, December 2024.
 
