@@ -246,6 +246,3 @@ Built for the Yep AI Multi-Agent Challenge, December 2024.
 
 ---
 
-## 📜 License
-
-MIT License - Built for Yep AI Challenge
